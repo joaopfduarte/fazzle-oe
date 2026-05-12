@@ -1,0 +1,327 @@
+% Fazzle — Apresentação Beamer (CEFET-MG Campus Timóteo)
+% Compilação: pdflatex (2 passes) — ex.: ./compile.sh fazzle
+% Contraste: texto claro sobre VerdeEscuro/VerdeFloresta; texto VerdeEscuro
+%           sobre AmareloFauna/VerdeCitrico (meta WCAG 4.5:1 — validar em WebAIM se necessário).
+
+\documentclass[aspectratio=169,11pt]{beamer}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+\usepackage[table]{xcolor}
+\definecolor{VerdeFloresta}{HTML}{519E5D}
+\definecolor{VerdeEscuro}{HTML}{1E4A28}
+\definecolor{AmareloFauna}{HTML}{F2B705}
+\definecolor{VerdeCitrico}{HTML}{94C12D}
+\definecolor{LaranjaAlerta}{HTML}{E87C1E}
+
+\usepackage{tikz}
+\usetikzlibrary{calc,positioning,backgrounds}
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{skins}
+
+\usepackage{booktabs}
+
+% --- Beamer: identidade Fazzle / CEFET ---
+\usetheme{Madrid}
+\usecolortheme{default}
+\setbeamercolor{structure}{fg=VerdeEscuro}
+\setbeamercolor{frametitle}{bg=VerdeEscuro,fg=white}
+\setbeamercolor{title}{bg=VerdeEscuro,fg=white}
+\setbeamercolor{subtitle}{fg=AmareloFauna}
+\setbeamercolor{author in head/foot}{bg=VerdeFloresta,fg=white}
+\setbeamercolor{title in head/foot}{bg=VerdeEscuro,fg=white}
+\setbeamercolor{date in head/foot}{bg=VerdeFloresta,fg=white}
+\setbeamercolor{block title}{bg=VerdeFloresta,fg=white}
+\setbeamercolor{block body}{bg=black!3,fg=black}
+\setbeamercolor{block title alerted}{bg=LaranjaAlerta,fg=white}
+\setbeamercolor{block body alerted}{bg=black!5,fg=black}
+\setbeamertemplate{navigation symbols}{}
+
+% Caixas “marca-texto” e CTA (contraste preferencial)
+\newtcolorbox{fazzlehl}[1][]{%
+  enhanced,
+  colback=AmareloFauna!88,
+  colframe=VerdeEscuro,
+  coltitle=VerdeEscuro,
+  coltext=VerdeEscuro,
+  fonttitle=\bfseries,
+  arc=3mm,
+  boxrule=0.8pt,
+  left=8pt,
+  right=8pt,
+  top=6pt,
+  bottom=6pt,
+  #1}
+\newtcolorbox{fazzlehlcitrico}[1][]{%
+  enhanced,
+  colback=VerdeCitrico!35,
+  colframe=VerdeEscuro,
+  coltitle=VerdeEscuro,
+  coltext=VerdeEscuro,
+  fonttitle=\bfseries,
+  arc=3mm,
+  boxrule=0.8pt,
+  left=8pt,
+  right=8pt,
+  top=6pt,
+  bottom=6pt,
+  #1}
+\newtcolorbox{fazzlecta}[1][]{%
+  enhanced,
+  colback=LaranjaAlerta,
+  colframe=VerdeEscuro,
+  colupper=white,
+  fontupper=\bfseries\large,
+  arc=4mm,
+  boxrule=1pt,
+  left=10pt,
+  right=10pt,
+  top=8pt,
+  bottom=8pt,
+  #1}
+
+\newcommand{\tituloimpacto}[1]{\textcolor{LaranjaAlerta}{\textbf{#1}}}
+
+% Fundo decorativo (círculos) — título
+\newcommand{\FazzleTituloBG}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[VerdeFloresta,opacity=0.18] ($(current page.north west)+(1.2,-1.2)$) circle (2.8cm);
+    \fill[AmareloFauna,opacity=0.14] ($(current page.north east)+(-2,-2.5)$) circle (3.4cm);
+    \fill[VerdeCitrico,opacity=0.12] ($(current page.south west)+(3,2)$) circle (2.2cm);
+    \fill[LaranjaAlerta,opacity=0.10] ($(current page.south east)+(-2.5,1.5)$) circle (2.5cm);
+  \end{tikzpicture}%
+}
+
+% Três nós circulares (ecossistema)
+\newcommand{\FazzleTresCirculos}[3]{%
+  \begin{center}
+  \begin{tikzpicture}[
+      node distance=1.6cm,
+      every node/.style={align=center,inner sep=6pt}]
+    \node[circle,draw=VerdeEscuro,line width=1pt,fill=VerdeFloresta!25,minimum size=2.9cm,text width=2.4cm] (A) {\small\bfseries #1};
+    \node[circle,draw=VerdeEscuro,line width=1pt,fill=AmareloFauna!45,minimum size=2.9cm,text width=2.4cm,right=of A] (B) {\small\bfseries #2};
+    \node[circle,draw=VerdeEscuro,line width=1pt,fill=VerdeCitrico!40,minimum size=2.9cm,text width=2.4cm,right=of B] (C) {\small\bfseries #3};
+    \draw[VerdeEscuro!60,thick,-stealth] (A) -- (B);
+    \draw[VerdeEscuro!60,thick,-stealth] (B) -- (C);
+  \end{tikzpicture}
+  \end{center}}
+
+\title[Fazzle]{Fazzle: Exploradores da Fauna Brasileira}
+\subtitle{Brincar, sentir e proteger. Quebra-cabeça multissensorial para educação ambiental e inclusão.}
+\author{Projeto Fazzle}
+\institute{CEFET-MG --- Campus Timóteo}
+\date{\today}
+
+\begin{document}
+
+% --- Capa ---
+\begin{frame}[plain]
+  \FazzleTituloBG
+  \vspace*{0.5cm}
+  \begin{center}
+    {\usebeamercolor[fg]{title}\usebeamerfont{title}\inserttitle\par}
+    \vspace{0.6em}
+    {\usebeamercolor[fg]{subtitle}\usebeamerfont{subtitle}\insertsubtitle\par}
+    \vspace{1.2em}
+    \begin{fazzlehl}[title=Proposta em uma linha]
+      Conectamos \textbf{tato}, \textbf{áudio} e \textbf{narrativa ecológica} com tecnologia de proximidade sem telas para a criança explorar a fauna brasileira com autonomia.
+    \end{fazzlehl}
+    \vspace{1em}
+    {\small\insertinstitute\par}
+  \end{center}
+\end{frame}
+
+% --- Problema e oportunidade ---
+\begin{frame}{Lacuna na educação inclusiva}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{O problema}
+        \begin{itemize}\setlength\itemsep{0.35em}
+          \item Brinquedos táteis focam em \textbf{formas básicas}, com pouca profundidade narrativa.
+          \item Jogos de conscientização ecológica \textbf{dependem demais da visão}.
+        \end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{fazzlehlcitrico}[title=Oceano azul]
+        Pais e educadores buscam soluções \textbf{STEAM}, \textbf{acessíveis} e \textbf{sustentáveis}. O mercado global de brinquedos educacionais cresce de forma acelerada até 2032.
+      \end{fazzlehlcitrico}
+    \end{column}
+  \end{columns}
+  \vspace{0.6em}
+  \begin{fazzlecta}
+    Atuamos na interseção: inclusão + ambiental + tecnologia assistiva --- ainda pouco explorada no varejo educacional.
+  \end{fazzlecta}
+\end{frame}
+
+% --- Proposta de valor (neuromotor + PCD visual) ---
+\begin{frame}{Proposta de valor}
+  \begin{fazzlehl}[title=Para quem importa]
+    Estimulamos \textbf{memória de trabalho}, \textbf{coordenação fino-motora} e \textbf{associação semiótica} por meio do encaixe magnético, texturas e narrativa sonora --- com foco em crianças com \textbf{deficiência visual} e baixa visão, sem excluir o público amplo.
+  \end{fazzlehl}
+  \vspace{0.5em}
+  \begin{itemize}\setlength\itemsep{0.4em}
+    \item \textbf{Alto contraste} e orientação tátil reduzem carga cognitiva na exploração.
+    \item \textbf{Áudio contextual} reforça vocabulário, habitat e conservação.
+    \item \textbf{Desafio progressivo} (``just right challenge'') mantém engajamento terapêutico e lúdico.
+  \end{itemize}
+\end{frame}
+
+% --- Ecossistema do produto ---
+\begin{frame}{Ecossistema Fazzle: tato, proximidade e áudio}
+  \FazzleTresCirculos{Ação física}{Identificação por proximidade}{Recompensa auditiva}
+  \vspace{0.4em}
+  \begin{itemize}\setlength\itemsep{0.35em}
+    \item A criança \textbf{tateia} a peça texturizada e \textbf{encaixa} na base magnética.
+    \item Responsáveis \textbf{aproximam o smartphone} da peça (tags \textbf{NFC} --- comunicação por proximidade, sem bateria na tag).
+    \item O aplicativo \textbf{narra histórias} e reproduz sons reais da fauna --- \tituloimpacto{sem telas obrigatórias para a brincadeira}.
+  \end{itemize}
+\end{frame}
+
+% --- Design universal ---
+\begin{frame}{Design universal na prática}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.32\textwidth}
+      \begin{tcolorbox}[colback=VerdeFloresta!20,colframe=VerdeEscuro,arc=2mm,title=\textcolor{VerdeEscuro}{\textbf{Orientação tátil}}]
+        \small Entalhes indicam o topo; integração com \textbf{Braille} nas peças.
+      \end{tcolorbox}
+    \end{column}
+    \begin{column}{0.32\textwidth}
+      \begin{tcolorbox}[colback=AmareloFauna!50,colframe=VerdeEscuro,arc=2mm,title=\textcolor{VerdeEscuro}{\textbf{Alto contraste}}]
+        \small Cores vibrantes sobre fundo claro para baixa visão.
+      \end{tcolorbox}
+    \end{column}
+    \begin{column}{0.32\textwidth}
+      \begin{tcolorbox}[colback=VerdeCitrico!30,colframe=VerdeEscuro,arc=2mm,title=\textcolor{VerdeEscuro}{\textbf{Base magnética}}]
+        \small O ``clique'' do ímã dá \textbf{previsibilidade} e evita quedas durante a exploração.
+      \end{tcolorbox}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% --- Impacto educacional ---
+\begin{frame}{Impacto educacional}
+  \begin{block}{Dinâmica principal}
+    Associação guiada: agrupar herbívoros, encaixar o animal ao \textbf{esqueleto em relevo} e consolidar vocabulário ecológico.
+  \end{block}
+  \begin{fazzlehl}[title=Tecnologia de proximidade]
+    Ao aproximar o smartphone do quebra-cabeça montado, a criança ouve o \textbf{som real do animal}, histórias de habitat e alertas sobre riscos de extinção --- conteúdo curado e acessível.
+  \end{fazzlehl}
+\end{frame}
+
+% --- Sustentabilidade ---
+\begin{frame}{Materialidade e mensagem}
+  \begin{itemize}\setlength\itemsep{0.4em}
+    \item Superamos papelão frágil e plásticos descartáveis: \textbf{cortiça natural}, \textbf{bioplásticos} e \textbf{madeiras certificadas FSC}.
+    \item A base magnética é \textbf{removível}: o desafio evolui com a criança (escalonamento de dificuldade).
+  \end{itemize}
+  \vspace{0.5em}
+  \begin{center}
+    \begin{tabular}{@{}lcc@{}}
+      \toprule
+      & \textbf{Fazzle} & \textbf{Tradicional} \\
+      \midrule
+      Sensorial & Tátil + áudio & Predominantemente visual \\
+      Sustentabilidade & Materiais de baixo impacto & Papelão / plástico barato \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+\end{frame}
+
+% --- Segmentação ---
+\begin{frame}{Segmentação}
+  \begin{fazzlecta}
+    Crianças de \textbf{5 a 10 anos} com deficiência visual (e baixa visão) + \textbf{responsáveis}, educadores e terapeutas que buscam brinquedos com evidência de engajamento motor e narrativo.
+  \end{fazzlecta}
+  \vspace{0.6em}
+  \begin{itemize}\setlength\itemsep{0.35em}
+    \item Mensagem clara para \textbf{pais}: segurança, STEAM e inclusão.
+    \item Canal técnico para \textbf{escolas e clínicas}: kits e protocolos de uso.
+  \end{itemize}
+\end{frame}
+
+% --- Parcerias / atividades / recursos ---
+\begin{frame}{Motor do projeto}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.34\textwidth}
+      \begin{tcolorbox}[colback=VerdeEscuro!8,colframe=VerdeFloresta,arc=2mm,title=\textcolor{VerdeEscuro}{\textbf{Parcerias}}]
+        \small Ecossistema de suprimentos: informática, química e embalagens. \textbf{Marketing de influência} para prova social e alcance orgânico.
+      \end{tcolorbox}
+    \end{column}
+    \begin{column}{0.32\textwidth}
+      \begin{tcolorbox}[colback=AmareloFauna!40,colframe=VerdeEscuro,arc=2mm,title=\textcolor{VerdeEscuro}{\textbf{Atividades-chave}}]
+        \small Pesquisa e desenvolvimento de \textbf{hardware e software} para acessibilidade, UX infantil e educação inclusiva.
+      \end{tcolorbox}
+    \end{column}
+    \begin{column}{0.32\textwidth}
+      \begin{tcolorbox}[colback=VerdeCitrico!28,colframe=VerdeEscuro,arc=2mm,title=\textcolor{VerdeEscuro}{\textbf{Recursos}}]
+        \small Expertise em \textbf{game design} ambiental, laboratório de prototipagem e infraestrutura computacional e física no campus.
+      \end{tcolorbox}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% --- Custos ---
+\begin{frame}{Estrutura de custos (frentes de investimento)}
+  \begin{itemize}\setlength\itemsep{0.45em}
+    \item \textbf{Aplicativo} multiplataforma (\textbf{Android / iOS}): narrativa, áudio, acessibilidade e atualização de conteúdos.
+    \item \textbf{Integração por proximidade} (NFC) e testes de interoperabilidade com dispositivos-alvo.
+    \item \textbf{Magnetismo} industrial: ímãs seguros, fixação e durabilidade.
+    \item \textbf{Bioplástico} e biomateriais: matéria-prima, moldagem e certificações.
+  \end{itemize}
+  \vspace{0.4em}
+  \begin{fazzlehlcitrico}[title=Gestão]
+    Priorizamos lote-piloto, homologação de fornecedores e custo total de propriedade (não apenas preço unitário).
+  \end{fazzlehlcitrico}
+\end{frame}
+
+% --- Canais, relacionamento, receita ---
+\begin{frame}{Canais, relacionamento e receita}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.5\textwidth}
+      \begin{block}{Canais e relacionamento}
+        \begin{itemize}\setlength\itemsep{0.3em}
+          \item \textbf{B2C}: e-commerce, redes sociais e campanhas de \textbf{AdTech} segmentadas.
+          \item Conteúdo educativo contínuo para \textbf{comunidade} e suporte pós-venda.
+        \end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{fazzlecta}
+        Receita principal: \textbf{venda direta transacional} digital (checkout próprio ou marketplaces).
+      \end{fazzlecta}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% --- Go-to-market ---
+\begin{frame}{Como chegamos ao mercado}
+  \begin{itemize}\setlength\itemsep{0.4em}
+    \item \textbf{Varejo B2C}: preço-alvo de referência \textbf{R\$50--R\$80} (e-commerce direto ao consumidor).
+    \item \textbf{B2B institucional}: escolas inclusivas, clínicas de terapia ocupacional e institutos para pessoas com deficiência visual.
+    \item \textbf{Escalabilidade}: kits colecionáveis por biomas e espécies da fauna brasileira.
+  \end{itemize}
+\end{frame}
+
+% --- Fecho ---
+\begin{frame}[plain]
+  \FazzleTituloBG
+  \vspace*{1.2cm}
+  \begin{center}
+    {\usebeamercolor[fg]{title}\usebeamerfont{title}Próximos passos\par}
+    \vspace{1em}
+    \begin{fazzlehl}[title=Convite]
+      Agendamos demonstração do protótipo, parceria de conteúdo científico e \textbf{piloto institucional} com o CEFET-MG Campus Timóteo.
+    \end{fazzlehl}
+    \vspace{1.2em}
+    {\large\textcolor{VerdeEscuro}{\textbf{contato@cefetmg.br}} \quad\textcolor{black!60}{\small(defina o e-mail oficial do projeto)}\par}
+    \vspace{0.5em}
+    {\small\insertinstitute\ --- Projeto Fazzle\par}
+  \end{center}
+\end{frame}
+
+\end{document}
