@@ -25,6 +25,7 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{tikz}
+\usetikzlibrary{positioning}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.14}
 \usepackage{anyfontsize}
@@ -46,20 +47,20 @@
 % Title
 % ====================
 
-\title{Some fancy title: followed by some more text}
+\title{Fazzle: Quebra-Cabeça Inclusivo para Crianças com Baixa Visão}
 
-\author{Your Name}
+\author{Daniel Martins, João Pedro Ferreira, Leander Rodrigues, Marcos Vinícius e Vitor Rafael}
 
-\institute[shortinst]{Yale University}
+\institute[shortinst]{Organização Empresarial}
 
 % ====================
 % Footer (optional)
 % ====================
 
 \footercontent{
-  \href{https://github.com}{Github: https://github.com} \hfill
-Poster Session \hfill
-  \href{mailto:youremail@yale.edu}{youremail@yale.edu}}
+  Modelo de Negocio - Empresa Ficticia Fazzle \hfill
+  Solução de tecnologia assistiva para educação infantil \hfill
+  Maio de 2026}
 % (can be left out to remove footer)
 
 % ====================
@@ -68,7 +69,7 @@ Poster Session \hfill
 
 % use this to include logos on the left and/or right side of the header:
 % Left: institution
- \logoright{\includegraphics[height=8cm]{logos/logo.png}}
+% \logoright{\includegraphics[height=8cm]{logos/logo.png}}
 % Right: funding agencies and other affilations 
 %\logoright{\includegraphics[height=7cm]{logos/NSF.eps}}
 % ====================
@@ -85,142 +86,36 @@ Poster Session \hfill
 
 \begin{column}{\colwidth}
 
-  \begin{block}{A block title}
-
-    Some block contents, followed by a diagram, followed by a dummy paragraph.
-
-    \begin{figure}
-      \centering
-                    \includegraphics[width=0.6\textwidth]{figures/results_fig.pdf}
-    \end{figure}
-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultricies
-    eget libero ac ullamcorper. Integer et euismod ante. Aenean vestibulum
-    lobortis augue, ut lobortis turpis rhoncus sed. Proin feugiat nibh a
-    lacinia dignissim. Proin scelerisque, risus eget tempor fermentum, ex
-    turpis condimentum urna, quis malesuada sapien arcu eu purus.
-
-  \end{block}
-
-  \begin{block}{A block containing a list}
-
-    Nam vulputate nunc felis, non condimentum lacus porta ultrices. Nullam sed
-    sagittis metus. Etiam consectetur gravida urna quis suscipit.
-
-    \begin{itemize}
-      \item \textbf{Mauris tempor} risus nulla, sed ornare
-      \item \textbf{Libero tincidunt} a duis congue vitae
-      \item \textbf{Dui ac pretium} morbi justo neque, ullamcorper
-    \end{itemize}
-
-    Eget augue porta, bibendum venenatis tortor.
-
-  \end{block}
-
-  \begin{alertblock}{A highlighted block}
-
-    This block catches your eye, so \textbf{important stuff} should probably go
-    here.
-
-    Curabitur eu libero vehicula, cursus est fringilla, luctus est. Morbi
-    consectetur mauris quam, at finibus elit auctor ac. Aliquam erat volutpat.
-    Aenean at nisl ut ex ullamcorper eleifend et eu augue. Aenean quis velit
-    tristique odio convallis ultrices a ac odio.
-
-    \begin{itemize}
-      \item \textbf{Fusce dapibus tellus} vel tellus semper finibus. In
-        consequat, nibh sed mattis luctus, augue diam fermentum lectus.
-      \item \textbf{In euismod erat metus} non ex. Vestibulum luctus augue in
-        mi condimentum, at sollicitudin lorem viverra.
-      \item \textbf{Suspendisse vulputate} mauris vel placerat consectetur.
-        Mauris semper, purus ac hendrerit molestie, elit mi dignissim odio, in
-        suscipit felis sapien vel ex.
-    \end{itemize}
-
-    Aenean tincidunt risus eros, at gravida lorem sagittis vel. Vestibulum ante
-    ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.
-
+  \begin{alertblock}{Problema e Oportunidade}
+    Crianças com baixa visão enfrentam barreiras em brincadeiras educativas que
+    dependem fortemente de estimulos visuais. A proposta da Fazzle e ampliar
+    acessibilidade e autonomia por meio de um quebra-cabeça multissensorial.
   \end{alertblock}
 
-\end{column}
-
-\separatorcolumn
-
-\begin{column}{\colwidth}
-
-  \begin{block}{A block containing an enumerated list}
-
-    Vivamus congue volutpat elit non semper. Praesent molestie nec erat ac
-    interdum. In quis suscipit erat. \textbf{Phasellus mauris felis, molestie
-    ac pharetra quis}, tempus nec ante. Donec finibus ante vel purus mollis
-    fermentum. Sed felis mi, pharetra eget nibh a, feugiat eleifend dolor. Nam
-    mollis condimentum purus quis sodales. Nullam eu felis eu nulla eleifend
-    bibendum nec eu lorem. Vivamus felis velit, volutpat ut facilisis ac,
-    commodo in metus.
-
-    \begin{enumerate}
-      \item \textbf{Morbi mauris purus}, egestas at vehicula et, convallis
-        accumsan orci. Orci varius natoque penatibus et magnis dis parturient
-        montes, nascetur ridiculus mus.
-      \item \textbf{Cras vehicula blandit urna ut maximus}. Aliquam blandit nec
-        massa ac sollicitudin. Curabitur cursus, metus nec imperdiet bibendum,
-        velit lectus faucibus dolor, quis gravida metus mauris gravida turpis.
-      \item \textbf{Vestibulum et massa diam}. Phasellus fermentum augue non
-        nulla accumsan, non rhoncus lectus condimentum.
-    \end{enumerate}
-
-  \end{block}
-
-  \begin{block}{Fusce aliquam magna velit}
-
-    Et rutrum ex euismod vel. Pellentesque ultricies, velit in fermentum
-    vestibulum, lectus nisi pretium nibh, sit amet aliquam lectus augue vel
-    velit. Suspendisse rhoncus massa porttitor augue feugiat molestie. Sed
-    molestie ut orci nec malesuada. Sed ultricies feugiat est fringilla
-    posuere.
-
-    \begin{figure}
-      \centering
-        \includegraphics[width=0.3\textwidth]{figures/dag.png}
-
-      \caption{Another figure caption.}
-    \end{figure}
-
-  \end{block}
-
-  \begin{block}{Nam cursus consequat egestas}
-
-    Nulla eget sem quam. Ut aliquam volutpat nisi vestibulum convallis. Nunc a
-    lectus et eros facilisis hendrerit eu non urna. Interdum et malesuada fames
-    ac ante \textit{ipsum primis} in faucibus. Etiam sit amet velit eget sem
-    euismod tristique. Praesent enim erat, porta vel mattis sed, pharetra sed
-    ipsum. Morbi commodo condimentum massa, \textit{tempus venenatis} massa
-    hendrerit quis. Maecenas sed porta est. Praesent mollis interdum lectus,
-    sit amet sollicitudin risus tincidunt non.
-
-    Etiam sit amet tempus lorem, aliquet condimentum velit. Donec et nibh
-    consequat, sagittis ex eget, dictum orci. Etiam quis semper ante. Ut eu
-    mauris purus. Proin nec consectetur ligula. Mauris pretium molestie
-    ullamcorper. Integer nisi neque, aliquet et odio non, sagittis porta justo.
+  \begin{block}{Proposta de Valor}
+    \textbf{Como contribuimos?}
 
     \begin{itemize}
-      \item \textbf{Sed consequat} id ante vel efficitur. Praesent congue massa
-        sed est scelerisque, elementum mollis augue iaculis.
-        \begin{itemize}
-          \item In sed est finibus, vulputate
-            nunc gravida, pulvinar lorem. In maximus nunc dolor, sed auctor eros
-            porttitor quis.
-          \item Fusce ornare dignissim nisi. Nam sit amet risus vel lacus
-            tempor tincidunt eu a arcu.
-          \item Donec rhoncus vestibulum erat, quis aliquam leo
-            gravida egestas.
-        \end{itemize}
-      \item \textbf{Sed luctus, elit sit amet} dictum maximus, diam dolor
-        faucibus purus, sed lobortis justo erat id turpis.
-      \item \textbf{Pellentesque facilisis dolor in leo} bibendum congue.
-        Maecenas congue finibus justo, vitae eleifend urna facilisis at.
+      \item Promovemos desenvolvimento neuro-motor, memória e coordenação.
+      \item Combinamos alto relevo, pecas magnéticas e feedback sonoro.
+      \item Transformamos o aprendizado em experiência inclusiva e lúdica.
     \end{itemize}
+  \end{block}
 
+  \begin{block}{Segmento de Clientes}
+    \textbf{Quem ajudamos?}
+
+    \begin{itemize}
+      \item Crianças de 5 a 10 anos com algum nível de deficiência visual.
+      \item Pais e responsaveis que buscam recursos educativos inclusivos.
+      \item Escolas e terapeutas como influenciadores de adoção.
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Descrição da Solução}
+    Produto educacional em formato de quebra-cabeça com arquitetura voltada para
+    habilidades cognitivas e motoras. O sistema RFID detecta tentativas de
+    encaixe e retorna dicas sonoras quando necessário.
   \end{block}
 
 \end{column}
@@ -229,72 +124,111 @@ Poster Session \hfill
 
 \begin{column}{\colwidth}
 
-  \begin{exampleblock}{A highlighted block containing some math}
+  \begin{block}{Atividades Chave}
+    \textbf{O que fazemos?}
 
-    A different kind of highlighted block.
-
-    $$
-    \int_{-\infty}^{\infty} e^{-x^2}\,dx = \sqrt{\pi}
-    $$
-
-    Interdum et malesuada fames $\{1, 4, 9, \ldots\}$ ac ante ipsum primis in
-    faucibus. Cras eleifend dolor eu nulla suscipit suscipit. Sed lobortis non
-    felis id vulputate.
-
-    \heading{A heading inside a block}
-
-    Praesent consectetur mi $x^2 + y^2$ metus, nec vestibulum justo viverra
-    nec. Proin eget nulla pretium, egestas magna aliquam, mollis neque. Vivamus
-    dictum $\mathbf{u}^\intercal\mathbf{v}$ sagittis odio, vel porta erat
-    congue sed. Maecenas ut dolor quis arcu auctor porttitor.
-
-    \heading{Another heading inside a block}
-
-    Sed augue erat, scelerisque a purus ultricies, placerat porttitor neque.
-    Donec $P(y \mid x)$ fermentum consectetur $\nabla_x P(y \mid x)$ sapien
-    sagittis egestas. Duis eget leo euismod nunc viverra imperdiet nec id
-    justo.
-
-  \end{exampleblock}
-
-  \begin{block}{Nullam vel erat at velit convallis laoreet}
-
-    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-    inceptos himenaeos. Phasellus libero enim, gravida sed erat sit amet,
-    scelerisque congue diam. Fusce dapibus dui ut augue pulvinar iaculis.
-
-    \begin{table}
-      \centering
-      \begin{tabular}{l r r c}
-        \toprule
-        \textbf{First column} & \textbf{Second column} & \textbf{Third column} & \textbf{Fourth} \\
-        \midrule
-        Foo & 13.37 & 384,394 & $\alpha$ \\
-        Bar & 2.17 & 1,392 & $\beta$ \\
-        Baz & 3.14 & 83,742 & $\delta$ \\
-        Qux & 7.59 & 974 & $\gamma$ \\
-        \bottomrule
-      \end{tabular}
-      \caption{A table caption.}
-    \end{table}
-
-    Donec quis posuere ligula. Nunc feugiat elit a mi malesuada consequat. Sed
-    imperdiet augue ac nibh aliquet tristique. Aenean eu tortor vulputate,
-    eleifend lorem in, dictum urna. Proin auctor ante in augue tincidunt
-    tempor. Proin pellentesque vulputate odio, ac gravida nulla posuere
-    efficitur. Aenean at velit vel dolor blandit molestie. Mauris laoreet
-    commodo quam, non luctus nibh ullamcorper in. Class aptent taciti sociosqu
-    ad litora torquent per conubia nostra, per inceptos himenaeos.
-
-
-
+    \begin{itemize}
+      \item Desenvolvimento de jogo educativo adaptado para baixa visão.
+      \item Integração de hardware (RFID e base magnética) ao tabuleiro.
+      \item Curadoria pedagogica focada em memória e coordenação.
+      \item Testes de usabilidade com publico infantil e familiares.
+    \end{itemize}
   \end{block}
 
-  \begin{block}{References}
+  \begin{block}{Recursos Principais}
+    \textbf{Quem somos e o que temos?}
 
-    \nocite{*}
-    \footnotesize{\bibliographystyle{plain}\bibliography{poster}}
+    \begin{itemize}
+      \item Equipe especializada em desenvolvimento de jogos.
+      \item Ênfase em temática ambiental e impacto social.
+      \item Recursos computacionais e prototipagem física.
+      \item App nativo Android/iOS para suporte e acompanhamento.
+    \end{itemize}
+  \end{block}
 
+  \begin{block}{Parcerias Principais}
+    \textbf{Quem ajuda?}
+
+    \begin{itemize}
+      \item Produtores de insumos de informática e componentes eletrônicos.
+      \item Fornecedores de embalagens e bioplasticos.
+      \item Influenciadores e parceiros de marketing digital.
+      \item Empresas da cadeia quimica para materiais sustentáveis.
+    \end{itemize}
+  \end{block}
+
+  \begin{exampleblock}{Canais e Relacionamento}
+    \textbf{Como nos encontram?}
+
+    \begin{itemize}
+      \item E-commerce proprio.
+      \item Redes sociais e trafego pago.
+      \item Pontos de venda com estratégia B2C.
+    \end{itemize}
+
+    \textbf{Como interagimos?}
+
+    \begin{itemize}
+      \item Atendimento digital contínuo no pre e pos-venda.
+      \item Conteúdos educativos para pais e crianças.
+      \item Suporte orientado ao uso do sistema RFID.
+    \end{itemize}
+  \end{exampleblock}
+
+\end{column}
+
+\separatorcolumn
+
+\begin{column}{\colwidth}
+
+  \begin{exampleblock}{Visualização da Jornada de Uso}
+    \centering
+    \begin{tikzpicture}[node distance=1.2cm and 0.9cm, >=latex]
+      \node[draw, rounded corners, align=center, fill=white, inner sep=6pt] (c1)
+        {Criança seleciona\\uma peça};
+      \node[draw, rounded corners, align=center, fill=white, right=of c1, inner sep=6pt] (c2)
+        {Encaixe no\\tabuleiro magnético};
+      \node[draw, rounded corners, align=center, fill=white, right=of c2, inner sep=6pt] (c3)
+        {Leitura RFID\\da tentativa};
+      \node[draw, rounded corners, align=center, fill=white, below=of c2, inner sep=6pt] (c4)
+        {Feedback sonoro\\(dica ou confirmação)};
+
+      \draw[->, thick] (c1) -- (c2);
+      \draw[->, thick] (c2) -- (c3);
+      \draw[->, thick] (c3) -- (c4);
+      \draw[->, thick] (c4) -- (c2);
+    \end{tikzpicture}
+
+    \vspace{0.8em}
+    O ciclo combina tato, magnetismo e áudio para orientar a criança até o
+    encaixe correto, incentivando autonomia e aprendizado.
+  \end{exampleblock}
+
+  \begin{block}{Estrutura de Custos}
+    \textbf{Principais elementos de custo}
+
+    \begin{itemize}
+      \item Desenvolvimento e manutenção de app Android/iOS.
+      \item Sistema RFID e tabuleiro magnético.
+      \item Materiais de embalagem em bioplastico.
+      \item Operação de e-commerce e aquisição de clientes.
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Fontes de Receita e Beneficios}
+    \textbf{Como monetizamos}
+
+    \begin{itemize}
+      \item Venda direta do produto em e-commerce e redes sociais.
+      \item Escalabilidade por canais digitais com alcance nacional.
+      \item Benefício social: inclusão e desenvolvimento infantil.
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Resumo do Modelo de Negócio}
+    A Fazzle conecta \textbf{tecnologia assistiva}, \textbf{educacao infantil}
+    e \textbf{canais digitais} para entregar um produto acessível com impacto
+    social e potencial de sustentabilidade financeira.
   \end{block}
 
 \end{column}

@@ -1,0 +1,65 @@
+{
+    "type1":"Parcerias principais",
+    "description1":"Quem ajuda?",
+    "data1": [
+        {
+            "item":"Produtores de insumos de informática, embalagens, influenciadores para marketing, produtores eletrônicos, empresas químicas."
+        }
+    ],
+    "type2":"Atividades chave",
+    "description2":"O que você faz?",
+    "data2": [
+        {
+            "item":"Produto quebra-cabeça com arquitetura voltada às habilidadades e com objetivo educacional. Público alvo: dificiência visual."
+        }
+    ],
+    "type3":"Recursos principais",
+    "description3":"Quem é você? O que você tem?",
+    "data3": [
+        {
+            "item":"Empresa especializada no desenvolvimento de jogos, com ênfase en temática ambiental, com recursos computacionais e físicos."
+        }
+    ],
+    "type4":"Propostas de valor",
+    "description4":"Como você contribui?",
+    "data4": [
+        {
+            "item":"Promover o desenvolvimento neuro-motor do público alvo, com ênfase em memória e coordenação."
+        }
+    ],
+    "type5":"Relacionamento com clientes",
+    "description5":"Como você interage?",
+    "data5": [
+        {
+            "item":"Através dos canais online, em pontos de venda(B2C)"
+        }
+    ],
+    "type6":"Canais",
+    "description6":"Como te encontram?",
+    "data6": [
+        {
+            "item":"E-commerce, redes sociais, trafego pago"
+        }
+    ],
+    "type7":"Segmento de clientes",
+    "description7":"Quem você ajuda?",
+    "data7": [
+        {
+            "item":"Crianças na faixa de 5 à 10 anos, com algum nível de deficiência visual. Junto de seus pais"
+        }
+    ],
+    "type8":"Estrutura de custos",
+    "description8":"O que você oferece?",
+    "data8": [
+        {
+            "item":"Sistema nativo android e ios para suporte. Sistema RFID e tabuleiro magnetico. BioPlásticos como material da embalagem. Estrutura de e-commerce"
+        }
+    ],
+    "type9":"Fontes de receita e benefícios",
+    "description9":"O que você recebe?",
+    "data9": [
+        {
+            "item":"Venda direta de produtos por canais de venda(e-commerce e redes sociais)"
+        }
+    ]
+}
